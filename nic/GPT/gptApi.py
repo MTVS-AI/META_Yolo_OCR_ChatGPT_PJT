@@ -18,7 +18,7 @@ def classify_text(text):
 # "The category is real estate."
 print(classify_text(ocr_text))
 # def main():
-#   openai.api_key = "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"
+#   openai.api_key = "api-key"
 #   response = openai.ChatCompletion.create(
 #     model="gpt-3.5-turbo",
 #     messages=[
