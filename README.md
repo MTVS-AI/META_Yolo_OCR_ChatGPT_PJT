@@ -93,7 +93,6 @@ PT 발표 : 차민수
 ![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/be2e84d9-3e73-4db3-89fd-84b7a072b0f3)
 
 ### ✔️ 데이터 세부 사항
-![image](https://github.com/haeniKim/ai-project-team4/assets/115389344/172f57e4-b179-4e00-9f40-73b0c7b135b5)
 
 - 총 데이터 갯수 : 1342개<br>
 - 남녀 비율 각 45%, 55%
