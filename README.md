@@ -80,9 +80,10 @@ PT 발표 : 차민수
 # 📊 데이터 소개
 ### ✔️ 도로변/인도 주변 현수막 실촬영 데이터 400장 (개별 100장)
 
-　　　　　　　　　　　　　 <주간>　　　　　　　　　　　　　　　　　　　　　　<야간>
+　　　　　　　　　　　　　 <주간>　　　　　　　　　　　　　　　　　　　　　<야간>
               
-![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/26072067-823e-4a9c-91cd-e58ffeef143b)
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/d0bbbfe0-cb26-4c71-a19f-ac315ea85779)
+
 
 ### ✔️ Bing 이미지 검색 크롤링 (약 50장)
 
