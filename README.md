@@ -30,12 +30,12 @@
 🔹네이버,카카오맵 로드뷰 캡처 약 900장 <br>
 
 데이터 전처리 : 모든 팀원<br><br>
-🔹Roboflow 활용 전체 데이터셋의 1/n씩 Annotation <br>
+🔹Roboflow 활용 전체 데이터셋의 1/n씩 Boxes Annotation <br>
 
 모듈 개발 역할<br><br>
-🔹Yolo(v8) 모델 학습 및 테스트 : 김종민, 임정민<br> 
+🔹Yolo(v8) 모델 학습 및 평가 : 김종민, 임정민<br> 
 🔹OCR(PaddleOCR, Naver Clova OCR) 모듈 개발 : 차민수<br>
-🔹ChatGPT 프롬프트 개발 : 나인채<br>
+🔹ChatGPT 프롬프트 엔지니어링 : 나인채<br>
 🔹Flask 서빙 서버 개발 : 김종민<br>
 🔹React UI 서버 개발 : 나인채<br>
 
@@ -52,11 +52,21 @@ PT 발표 : 차민수
 
 ### ✔️ 세부 진행 기록
 - 23-08-01 : 팀 아이스브레이킹 및 주제 토의(1)
-- 23-08-02 : 아이디어 피드백, 주제 토의(2), 데이터 서치
-- 23-08-03 : 아이디어 심사, 주제 선정
+- 23-08-02 : 아이디어 피드백, 주제 토의(2), 데이터 서치(AI hub, 공공데이터포털)
+- 23-08-03 : 아이디어 심사, 주제 선정, 데이터 서치(AI hub, 공공데이터포털), 활용 기술 파악(Obejct Detection, OCR, Text Classification)
 - 23-08-04 : 도로변/인도 주변 현수막 실촬영 데이터 수집(야간), Yolov8 객체 탐지 모델 검토
-- 23-08-04 ~ 23-08-04 : 도로변/인도 주변 현수막 실촬영 데이터 수집(주간/야간)
-- 
+- 23-08-05 ~ 23-08-06 : 도로변/인도 주변 현수막 실촬영 데이터 수집(주간/야간)
+- 23-08-07 : 팀별 프로젝트 주제 발표
+- 23-08-08 : Roboflow 활용 1차 Annotation, yolov8n.pt Pretrained 모델 학습
+- 23-08-09 : yolov8n.pt Fine-tunning 모델 평가, 추가 데이터 수집 계획 수립(크롤링 및 로드뷰 활용)
+- 23-08-10 : 네이버/카카오맵 로드뷰 활용 현수막 이미지 수집(1), Roboflow 활용 2차 Annotation(1)
+- 23-08-11 : 네이버/카카오맵 로드뷰 활용 현수막 이미지 수집(2), Roboflow 활용 2차 Annotation(2), 총 1342개 현수막 이미지 데이터셋 구성
+- 23-08-12 ~ 23-08-13 : yolov8n.pt 기반 Fine-tunning 진행,  yolov8s.pt 기반 Fine-tunning 진행
+- 23-08-14 : 진행상황 중간보고, 가상환경 통합, Yolo/OCR/chatGPT Main코드 통합 작업(1)
+- 23-08-15 : 휴식 (광복절)
+- 23-08-16 : Yolo/OCR/chatGPT Main코드 통합 작업(2)
+
+
 - 23-07-18 (9:00 ~ 14:00) : cv2 활용 카메라(웹캠) 테스트, 각도별 안면 데이터 수집
 - 23-07-18 (14:00 ~ 20:00) : DataFrame 활용 Multi-Label 형식 전처리 
 - 23-07-19 : 안면 인식을 위한 MediaPipe, FaceNet(MTCNN)모듈 성능 테스트, 카메라(웹캠) 연동 모듈 개발
@@ -68,16 +78,25 @@ PT 발표 : 차민수
 - 23-07-31 : AI 전공 내부 발표 및 질의응답
 
 # 📊 데이터 소개
-### ✔️ AI-Hub '가족 관계가 알려진 얼굴 이미지 데이터' 데이터셋의 일부를 활용하였습니다.
+### ✔️ 도로변/인도 주변 현수막 실촬영 데이터 400장 (개별 100장)
 
-![image](https://github.com/haeniKim/ai-project-team4/assets/115389344/842f0c23-673e-462a-8d23-fbe806201144)
+　　　　　　　　　　　　　 <주간>　　　　　　　　　　　　　　　　　　　　　　　　　 　　　　<야간>
+              
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/26072067-823e-4a9c-91cd-e58ffeef143b)
 
-[가족 관계가 알려진 얼굴 이미지 데이터](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=528) <br><br>
+### ✔️ Bing 이미지 검색 크롤링 (약 50장)
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/be2e84d9-3e73-4db3-89fd-84b7a072b0f3)
+
+### ✔️ 네이버 지도/카카오맵 로드뷰 캡쳐 (약 900장)
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/26235036-8a9c-4fb9-bbdb-dd729c074c6e)
+
 
 ### ✔️ 데이터 세부 사항
 ![image](https://github.com/haeniKim/ai-project-team4/assets/115389344/172f57e4-b179-4e00-9f40-73b0c7b135b5)
 
-- 총 데이터 갯수 : 43850개<br>
+- 총 데이터 갯수 : 1342개<br>
 - 남녀 비율 각 45%, 55%
 - 3014명의 이미지 데이터
 - 10대 연령이 27%로 가장 많은 비율 차지
