@@ -77,8 +77,8 @@ PT 발표 : 차민수
 - 23-08-12 ~ 23-08-13 : yolov8n.pt 기반 Fine-tunning 진행,  yolov8s.pt 기반 Fine-tunning 진행
 - 23-08-14 : 진행상황 중간보고, 가상환경 통합, Yolo/OCR/chatGPT Main코드 통합 작업(1)
 - 23-08-15 : 휴식 (광복절)
-- 23-08-16 : Yolo/OCR/chatGPT Main코드 통합 작업(2)
-- 23-08-17 : flask작업시작, yolo8_s 학습진행
+- 23-08-16 : Yolo/OCR/chatGPT Main코드 통합 작업(2),flask작업시작, yolo8_s 학습진행
+- 23-08-17 : 
 - 23-08-18 :
 - 23-08-19 ~ 23-08-20  :
 - 23-08-21 :
