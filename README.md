@@ -78,10 +78,10 @@ PT 발표 : 차민수
 - 23-08-14 : 진행상황 중간보고, 가상환경 통합, Yolo/OCR/chatGPT Main코드 통합 작업(1)
 - 23-08-15 : 휴식 (광복절)
 - 23-08-16 : Yolo/OCR/chatGPT Main코드 통합 작업(2),flask작업시작, yolo8_s 학습진행, Naver CLOVA OCR API 코드 구현
-- 23-08-17 : yolo8_s(epochs=108)영상시연, flask파일및폴더업로드구현, Clova OCR & chatGPT API 코드 통합
-- 23-08-18 :
-- 23-08-19 ~ 23-08-20  :
-- 23-08-21 :
+- 23-08-17 : yolo8_s(epochs=108)영상시연, flask 파일 및 폴더 업로드구현, Clova OCR & chatGPT API 코드 통합
+- 23-08-18 : yolov8s.pt/yolov8m.pt 기반 Fine-tunning 진행, Folium 기반 지도 모듈 구현
+- 23-08-19 ~ 23-08-20  : 프로젝트 베타버전 PPT/대본 작성
+- 23-08-21 : 팀별 프로젝트 베타버전 발표
 - 23-08-22 :
 - 23-08-23 :
 - 23-08-24 :
