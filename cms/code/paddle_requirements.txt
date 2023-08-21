@@ -18,5 +18,6 @@ Polygon3
 lanms-neo==1.0.2
 PyMuPDF<1.21.0
 
-# python -m pip install paddlepaddle-gpu -i https://pypi.tuna.tsinghua.edu.cn/simple
+# pip uninstall paddlepaddle
+# python -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
 # pip install "paddleocr>=2.0.1"
