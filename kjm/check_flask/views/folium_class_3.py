@@ -169,29 +169,51 @@ class MapManager:
 
         # 원본 이미지와 detect 이미지는 고정적으로 들어감
         image_tag = f"""
-        <head>
-        <meta charset="euc-kr">
-        <link rel="stylesheet" href="">
-        <style src="">
-        </style>
-        </head>
-        <body>
-            <div>
-            <table border=2>
-                <tr align=center>
-                    <th>이미지</th>
-                    <th>종류</th>
-                    <th>내용</th>
-                </tr>
-                <tr>
-                    <td><img src="data:image/jpeg;base64,{pic_base[0]}" width=200 height=100></td><td align=center width=75>Origin Image</td><td align=center>원본 이미지</td>
-                </tr>
-                <tr>
-                    <td><img src="data:image/jpeg;base64,{pic_base[1]}" width=200 height=100></td><td align=center width=75>Detect Image</td><td align=center>YOLO로 Detect한 이미지</td>
-                </tr>
-        """ + crop_html + """
-        </body>
-        """
+            <head>
+            <meta charset="euc-kr">
+            <link rel="stylesheet" href="">
+            <style>
+                <link rel="stylesheet" href="static/css/style.css">
+            </style>
+            </head>
+            <body>
+                <div>
+                <table class="table-dark" border=1>
+                    <tr align=center>
+                        <th width="200">촬영 일시</th>
+                        <td width="650">{df_report.loc[idx]['Date']} {df_report.loc[idx]['Time']}</td>
+                    </tr>
+                    <tr align=center>
+                        <th width="200">이미지</th>
+                        <th width="650">내용</th>
+                    </tr>
+                    <tr>
+                        <td>
+                        <table id="image">
+                            <tr>
+                                <td><img src="data:image/jpeg;base64,{pic_base[0]}" width=200 height=100></td>
+                            </tr>
+                            <tr>
+                                <td align=center>Origin Image</td>
+                            </tr>
+                        </table>
+                        </td><td align=center>원본 이미지</td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <table id="image">
+                            <tr>
+                                <td><img src="data:image/jpeg;base64,{pic_base[1]}" width=200 height=100></td>
+                            </tr>
+                            <tr>
+                                <td align=center>Detect Image</td>
+                            </tr>
+                        </table>
+                        </td><td align=center>Yolo로 Detect한 이미지</td>
+                    </tr>
+            """ + crop_html + """
+            </body>
+            """
 
         iframe = folium.IFrame(image_tag, width=1000, height=150+base_h+crop_h)
         popup = folium.Popup(iframe)
