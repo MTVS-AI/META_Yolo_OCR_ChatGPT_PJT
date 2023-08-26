@@ -92,7 +92,7 @@ def uploader_file():
             if result:
                 fil.save(os.path.join('./check_flask/views/capture_data', filename))
         # IP괄호안 파라미터 3개 ////////
-        aaa = IP('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','https://fsjr0lq9ke.apigw.ntruss.com/custom/v1/24396/82f04b3aebc287bf6b01f1571df49417fd2b38cb145fa7f9aadbb152eacbb606/general','R1prcGNuRUthUG5hdGJPUW1Xd3pDVlVLUXdJZEx6UFM=')
+        aaa = IP('','','')
         # aaa.make_frame()
         # # aaa.move_all_img('C:/Users/user/Desktop/flask_12/check_flask/views/capture_data','C:/Users/user/Desktop/flask_12/temp' )
         # time.sleep(5)
