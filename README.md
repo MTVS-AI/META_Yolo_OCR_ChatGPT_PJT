@@ -57,7 +57,7 @@
 🔹React UI 서버 개발 : 나인채<br>
 🔹Folium 지도 모듈 개발 : 차민수<br>
 
-개발 코드 통합 : 임정민
+개발 코드 통합 : 임정민<br><br>
 통합 코드 모듈회 : 나인채, 김종민
 
 발표 PPT 및 대본 : 임정민
@@ -119,32 +119,76 @@ PT 발표 : 알파 - 차민수, 베타 - 김종민, 최종 - 나인채
 - 총 학습 데이터 갯수 : 3226개 (train:2826개, valid:268개, test:132개)
 - 클래스 : banner(현수막), frame(지정게시대틀) 총 2개 클래스
 
+# 💡 주요 내용
 
-# 🅰︎ OCR
-### ✔️ PaddleOCR
+### 🅰︎ OCR
+##### ✔️ PaddleOCR
 
 - 경계가 뚜렷한 텍스트와 숫자 추출에 괜찮은 성능을 보였다.
 - 희미한 텍스트에 대해 색상 반전 등의 기법을 시도했다.
 - 그러나 다음단계로 넘어갔을 때 PaddleOCR로 추출한 텍스트만으로는 현수막 분류가 불가능하여 다른 OCR을 활용했다.
 
 
-### ✔️ Naver Clova OCR
+##### ✔️ Naver Clova OCR
 
 - Naver Clova에서 API를 발급받아 요금을 내고 사용하는 고성능 OCR 모듈
 - PaddleOCR보다 기울어진 구도의 현수막과, Noise가 들어가있는 텍스트들을 더 효과적으로 추출 가능했다.
 
 
-# 텍스트 분류 (ChatGPT)
+### 📝 텍스트 분류 (ChatGPT)
 
 
-# 🗺️ 웹서비스 기반 지도 시각화
-### ✔️ 들어가는 정보
+### 🗺️ 웹서비스 기반 지도 시각화
+
+##### ✔️ 들어가는 정보
 - 정제된 DataFrame 바탕
 - 이미지 / 이미지의 종류
 - 내용 : crop된 이미지의 범례, 현수막의 내용, 해당 범례로 분류한 근거를 표의 형태로 포함
 
-### ✔️ folium 모듈
+##### ✔️ folium 모듈
 - leaflet.js를 기반으로 만들어진 Python 지도 시각화 라이브러리
 - 좌표값을 기반으로 popup 마커를 생성하며, 해당 마커들은 범례에 따라 하나의 그룹으로 묶는다.
 - popup에는 html 기반의 표가 들어가며, base64를 통해 인코딩 및 디코딩해서 이미지를 표에 삽입한다.
 - 지도에는 최종적으로 popup 마커들이 표시되며, 우측 상단의 박스 체크를 통해 합법 / 정치 / 불법 현수막들 중 원하는 종류의 현수막 현황을 볼 수 있게 조절 가능하다.
+
+# 🛠 기술 스택
+
+### 🔹 언어
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+
+### 🔹 주요 라이브러리
+<img src="https://img.shields.io/badge/tensorflow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"> <img src="https://img.shields.io/badge/pytorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"> <img src="https://img.shields.io/badge/torchvision-29A7DF?style=for-the-badge&logo=torchvision&logoColor=white"> <img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white"> <img src="https://img.shields.io/badge/MediaPipe-1299F3?style=for-the-badge&logo=MediaPipe&logoColor=white"> <img src="https://img.shields.io/badge/facenetpytorch-FF5500?style=for-the-badge&logo=facenetpytorch&logoColor=white"> <img src="https://img.shields.io/badge/keras-D00000?style=for-the-badge&logo=keras&logoColor=white"> <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"> <img src="https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy&logoColor=white"> <img src="https://img.shields.io/badge/matplotlib-0058CC?style=for-the-badge&logo=matplotlib&logoColor=white"> <img src="https://img.shields.io/badge/pillow-006AFF?style=for-the-badge&logo=pillow&logoColor=white">
+
+### 🔹 개발 툴
+<img src="https://img.shields.io/badge/VS code-2F80ED?style=for-the-badge&logo=VS code&logoColor=white"> <img src="https://img.shields.io/badge/Google Colab-F9AB00?style=for-the-badge&logo=Google Colab&logoColor=white">
+
+### 🔹 협업 툴
+<img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white"> <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
+
+# 🔍 참고 자료
+### ✔️ 데이터
+  
+![image](https://github.com/haeniKim/ai-project-team4/assets/115389344/842f0c23-673e-462a-8d23-fbe806201144)
+
+[가족 관계가 알려진 얼굴 이미지 데이터](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=528) <br><br>
+
+### ✔️ 논문
+
+- EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks
+- Deep Residual Learning for Image Recognition
+- Very Deep Convolutional Networks for Large-Scale Image Recognition
+- Densely Connected Convolutional Networks
+
+### ✔️ 기사
+
+- http://www.banronbodo.com/news/articleView.html?idxno=21340
+- https://www.etnews.com/20221115000257
+- https://www.brandbrief.co.kr/news/articleView.html?idxno=5995
+- https://www.jeonmae.co.kr/news/articleView.html?idxno=942925
+- http://www.banronbodo.com/news/articleView.html?idxno=21340
+
+### ✔️ 이미지 영상 출처
+
+- https://dimg.donga.com/wps/NEWS/IMAGE/2020/01/03/99072357.2.jpg
+- https://url.kr/q6u1no
+- https://www.youtube.com/watch?v=EFkdgVDP3qs
