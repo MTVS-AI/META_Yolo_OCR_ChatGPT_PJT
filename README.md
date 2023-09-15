@@ -121,22 +121,28 @@ PT 발표 : 알파 - 차민수, 베타 - 김종민, 최종 - 나인채
 
 # 💡 주요 내용
 
-### 🅰︎ OCR
-##### ✔️ PaddleOCR
+### ✔️ Object Detection
+
+##### yolov8(n)
+
+### ✔️ OCR
+##### 1) PaddleOCR
 
 - 경계가 뚜렷한 텍스트와 숫자 추출에 괜찮은 성능을 보였다.
 - 희미한 텍스트에 대해 색상 반전 등의 기법을 시도했다.
 - 그러나 다음단계로 넘어갔을 때 PaddleOCR로 추출한 텍스트만으로는 현수막 분류가 불가능하여 다른 OCR을 활용했다.
 
 
-##### ✔️ Naver Clova OCR
+##### 2) Naver Clova OCR
 
 - Naver Clova에서 API를 발급받아 요금을 내고 사용하는 고성능 OCR 모듈
 - PaddleOCR보다 기울어진 구도의 현수막과, Noise가 들어가있는 텍스트들을 더 효과적으로 추출 가능했다.
 
 
-### 📝 텍스트 분류 (ChatGPT)
+### ✔️ 텍스트 분류 (ChatGPT)
 
+- OCR을 통해 추출된 현수막의 텍스트 카테고리 분류 (프레임/합법/정치/기타 총 4개 클래스)
+- chatGPT API활용 Text Classification
 
 ### 🗺️ 웹서비스 기반 지도 시각화
 
@@ -166,29 +172,22 @@ PT 발표 : 알파 - 차민수, 베타 - 김종민, 최종 - 나인채
 <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white"> <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
 
 # 🔍 참고 자료
-### ✔️ 데이터
-  
-![image](https://github.com/haeniKim/ai-project-team4/assets/115389344/842f0c23-673e-462a-8d23-fbe806201144)
-
-[가족 관계가 알려진 얼굴 이미지 데이터](https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=528) <br><br>
-
-### ✔️ 논문
-
-- EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks
-- Deep Residual Learning for Image Recognition
-- Very Deep Convolutional Networks for Large-Scale Image Recognition
-- Densely Connected Convolutional Networks
 
 ### ✔️ 기사
 
-- http://www.banronbodo.com/news/articleView.html?idxno=21340
-- https://www.etnews.com/20221115000257
-- https://www.brandbrief.co.kr/news/articleView.html?idxno=5995
-- https://www.jeonmae.co.kr/news/articleView.html?idxno=942925
-- http://www.banronbodo.com/news/articleView.html?idxno=21340
+- https://www.youtube.com/watch?v=QtI7la0i_7A&ab_channel=%EC%B6%98%EC%B2%9CMBC%EB%89%B4%EC%8A%A4
+- https://www.munhwa.com/news/view.html?no=2022092001031039342001
+- https://www.joongang.co.kr/article/25170006#home
+- https://www.busan.com/view/busan/view.php?code=2023061418340018356
+- https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002429221
+- https://www.greenkorea.org/activity/living-environment/zerowaste/91981/
 
-### ✔️ 이미지 영상 출처
+### ✔️ 오픈소스 (GitHub)
 
-- https://dimg.donga.com/wps/NEWS/IMAGE/2020/01/03/99072357.2.jpg
-- https://url.kr/q6u1no
-- https://www.youtube.com/watch?v=EFkdgVDP3qs
+- https://github.com/ultralytics/ultralytics
+- https://www.ncloud.com/product/aiService/ocr
+
+### ✔️ 라이브러리 공식 문서
+
+- https://docs.ultralytics.com/modes/predict/
+- https://pypi.org/project/paddleocr/
