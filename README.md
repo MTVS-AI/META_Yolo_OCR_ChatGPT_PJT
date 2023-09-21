@@ -47,7 +47,7 @@
 🔹네이버,카카오맵 로드뷰 캡처 약 900장 <br>
 
 데이터 전처리 : 모든 팀원<br><br>
-🔹Roboflow 활용 전체 데이터셋의 1/n씩 Boxes Annotation <br>
+🔹Roboflow 활용 전체 데이터셋의 1/n 할당 Boxes Annotation <br>
 
 모듈 개발 역할<br><br>
 🔹Yolo(v8) 모델 학습 및 평가 : 김종민, 임정민<br> 
@@ -112,37 +112,77 @@ PT 발표 : 알파 - 차민수, 베타 - 김종민, 최종 - 나인채
 ### ✔️ 데이터 세부 사항
 
 - 원본 데이터 갯수 : 1342개<br>
-- 데이터 증강 방법 (차량 주행 시점 고려)
+- 데이터 증강 (RoboFlow 활용 Yolov8 format, 차량 주행 시점 고려)
   1) rotate ± 10°
   2) brightness ± 25%
   3) saturation ± 25%
 - 총 학습 데이터 갯수 : 3226개 (train:2826개, valid:268개, test:132개)
-- 클래스 : banner(현수막), frame(지정게시대틀) 총 2개 클래스
+- Object Detection 클래스 : banner(현수막), frame(지정게시대틀) 총 2개 클래스
 
 # 💡 주요 내용
 
 ### ✔️ Object Detection
 
-##### yolov8(n)
+##### 1) 데이터 전처리 및 증강(RoboFlow)
+
+- 전처리 : Roboflow 활용 box annotations, 클래스 : banner(현수막), frame(지정게시대틀)
+- 증강 : rotate ± 10° / brightness ± 25% / saturation ± 25%
+- 총 학습 데이터 갯수 : 3226개 (train:2826개, valid:268개, test:132개)
+
+##### 2) yolov8(n) 모델 학습/평가 및 추론
+
+- 학습 파라미터 : epochs=2000, patience=50, batch=32, dropout=0.3, imgz=640 x 640, iou=0.7, optimizer='Adam', lr=0.01
+- 평가 지표 : mAP50=0.963 , mAP50-95=0.797 , cls_loss=0.6101 , dfl_loss=1.193 , box_precision=0.948 , box_recall= 0.925
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/9fdf52ae-ac29-458a-8e9c-841cc5871528) 
+
+- 학습 Validation 예시
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/be2473b8-ab41-47ff-937a-f198db8de386)
+
+- 모델 Predict 예시
+  
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/c07b3085-0aa8-4e04-acd4-badfa018bec5)
+### ✔️ 현수막 Type 분류
+
+##### 1) 현수막 분류 알고리즘
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/5deceae0-5fee-4849-b5f9-4ebb3f60664a)
+
+##### 2) 객체 탐지 활용 지정게시대 현수막(합법 현수막) 구분
+- 입력된 이미지에 frame (지정게시대 틀) 존재 시, frame/banner의 xyxy 좌표 파악
+- banner/frame의 겹치는 비율 계산
+- 임계값 70% 이상 시 합법 현수막으로 분류
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/1fd7e707-9c90-4631-a732-ba3c7f5c79c0)
+
 
 ### ✔️ OCR
 ##### 1) PaddleOCR
 
-- 경계가 뚜렷한 텍스트와 숫자 추출에 괜찮은 성능을 보였다.
-- 희미한 텍스트에 대해 색상 반전 등의 기법을 시도했다.
-- 그러나 다음단계로 넘어갔을 때 PaddleOCR로 추출한 텍스트만으로는 현수막 분류가 불가능하여 다른 OCR을 활용했다.
+- 경계가 뚜렷한 텍스트와 숫자 추출에 괜찮은 성능
+- 희미한 텍스트에 대해 색상 반전 등의 기법 시도
+- 그러나 다음단계로 넘어갔을 때 PaddleOCR로 추출한 텍스트만으로는 현수막 분류가 불가능하여 다른 OCR 활용
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/ee6c41a3-e594-4fb1-99ab-462e0474b28b)
 
 
 ##### 2) Naver Clova OCR
 
 - Naver Clova에서 API를 발급받아 요금을 내고 사용하는 고성능 OCR 모듈
-- PaddleOCR보다 기울어진 구도의 현수막과, Noise가 들어가있는 텍스트들을 더 효과적으로 추출 가능했다.
+- PaddleOCR보다 기울어진 구도의 현수막과, Noise가 들어가있는 텍스트들을 더 효과적으로 추출 가능
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/a4901a40-da1e-43dd-95a6-a033c3bf4e70)
 
 
 ### ✔️ 텍스트 분류 (ChatGPT)
 
 - OCR을 통해 추출된 현수막의 텍스트 카테고리 분류 (프레임/합법/정치/기타 총 4개 클래스)
-- chatGPT API활용 Text Classification
+- 프롬프트 엔지니어링 : 역할 부여 - 문제 정의 - 분류 클래스 묘사 - 전달 방식 정의 - 내용 전달 - 반환 방식 정의
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/14d7daa7-9b1e-43ae-8f29-005dd65ea3cc)
+
+- Text Classification 예시
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/6b36a710-95f0-4d29-9c3a-dbe093e42fb2)
+
 
 ### 🗺️ 웹서비스 기반 지도 시각화
 
