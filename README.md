@@ -180,11 +180,24 @@ PT 발표 : 알파 - 차민수, 베타 - 김종민, 최종 - 나인채
 - 프롬프트 엔지니어링 : 역할 부여 - 문제 정의 - 분류 클래스 묘사 - 전달 방식 정의 - 내용 전달 - 반환 방식 정의
 ![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/14d7daa7-9b1e-43ae-8f29-005dd65ea3cc)
 
-- Text Classification 예시
+- Text Classification 예시 ( 프레임=0 , 합법=1 , 정치=2 , 기타=3 )
 ![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/6b36a710-95f0-4d29-9c3a-dbe093e42fb2)
+
+### ✔️ 데이터 정제 (DataFrame)
+
+- 데이터프레임 활용 데이터 정제 및 저장
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/a30b63eb-bbfe-424f-81ec-d4efb596cb94)
 
 
 ### 🗺️ 웹서비스 기반 지도 시각화
+
+- 단속 업무에 활용할 수 있는 현수막 현황 자료
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/a2c000f9-c6d9-4374-8332-98b706cf755e)
+
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/0470d1c7-7fab-4aed-9499-ae8a7bd992f0)
+
+
 
 ##### ✔️ 들어가는 정보
 - 정제된 DataFrame 바탕
@@ -193,9 +206,10 @@ PT 발표 : 알파 - 차민수, 베타 - 김종민, 최종 - 나인채
 
 ##### ✔️ folium 모듈
 - leaflet.js를 기반으로 만들어진 Python 지도 시각화 라이브러리
-- 좌표값을 기반으로 popup 마커를 생성하며, 해당 마커들은 범례에 따라 하나의 그룹으로 묶는다.
-- popup에는 html 기반의 표가 들어가며, base64를 통해 인코딩 및 디코딩해서 이미지를 표에 삽입한다.
-- 지도에는 최종적으로 popup 마커들이 표시되며, 우측 상단의 박스 체크를 통해 합법 / 정치 / 불법 현수막들 중 원하는 종류의 현수막 현황을 볼 수 있게 조절 가능하다.
+- 좌표값을 기반으로 popup 마커 생성, 해당 마커들은 범례에 따라 하나의 그룹으로 통합
+- popup에는 html 기반의 표 입력, base64 활용 인코딩 및 디코딩 후 표에 이미지 삽입
+- 최종적으로 지도에 popup 마커들이 표시되는 형태
+- 우측 상단의 박스 체크를 통해 합법 / 정치 / 불법 현수막들 중 원하는 종류의 현수막 현황을 볼 수 있는 조절 기능 구현
 
 # 🛠 기술 스택
 
