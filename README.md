@@ -2,6 +2,8 @@
 
 ### ✔️ 불법 현수막 탐지 프로젝트 (메티버스 아카데미 2기 AI반 8월 월말평가 팀 프로젝트)
 
+![image](https://github.com/MTVS-AI/META_Yolo_OCR_ChatGPT_PJT/assets/115389344/25253426-fe5d-47fd-b37f-0cfc2ec3b27b)
+
 # 📃 프로젝트 소개
 
 ### ✔️ Yolo(v8), OCR(PaddleOCR,Naver Clovar OCR), ChatGPT를 활용한 불법 현수막 탐지 시스템 프로젝트입니다.
